@@ -51,6 +51,32 @@ def sort_ab(a, b):
 
     #return results list
 
+    if len(a) == 0 and len(b) == 0:
+        return []
+
+    results = []
+    i = 0
+    j = 0
+
+    while i <= len(a)-1 and j <= len(b)-1:
+        num1 = a[i]
+        num2 = b[j]
+        if num1 <= num2:
+            results.append(num1)
+            i += 1
+        else:
+            results.append(num2)
+            j +=1
+
+    while i <= len(a)-1:
+        results.append(a[i])
+        i += 1
+
+    while j <= len(b)-1:
+        results.append(b[j])
+        j +=1
+
+    return results
 
 if __name__ == '__main__':
     import doctest
